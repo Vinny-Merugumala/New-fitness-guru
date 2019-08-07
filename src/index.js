@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Auth0Provider } from "./components/react-auth0-wrapper";
 import { BrowserRouter } from "react-router-dom";
 import config from "./auth_config.json";
+import "./styles/tailwind.css";
 
 const onRedirectCallback = appState => {
   window.history.replaceState(
