@@ -7,61 +7,80 @@ const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
-    <body className="lg:px-16 px-6 flex  justify-end items-center flex-wrap bg-blue-400 py-2">
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-end">
-        <label for="menu-toggle" class="cursor-pointer lg:hidden block">
-          <svg
-            class="fill-current text-white-900"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
+    <div className="nav-big">
+      <body className="lg:px-16 px-6 flex  justify-end items-center flex-wrap py-4">
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-end">
+          <label for="menu-toggle" class="cursor-pointer lg:hidden block">
+            <svg
+              class="fill-current text-white-900"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+            >
+              <title>menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </label>
+          <input class="hidden" type="checkbox" id="menu-toggle" />
+          <div
+            class="hidden lg:flex lg:items-center lg:w-auto w-full"
+            id="menu"
           >
-            <title>menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </label>
-        <input class="hidden" type="checkbox" id="menu-toggle" />
-        <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
-          <nav class="flex justify-end">
-            {!isAuthenticated && (
-              <button
-                class="inline-block text-sm px-5 py-3 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-                onClick={() => loginWithRedirect({})}
-              >
-                Log in
-              </button>
-            )}
-
-            {isAuthenticated && (
-              <button
-                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-                onClick={() => logout()}
-              >
-                Log out
-              </button>
-            )}
-
-            {isAuthenticated && (
-              <div class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                <Link
-                  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-                  to="/"
+            <nav class="flex justify-end">
+              {isAuthenticated && (
+                <div>
+                  <Link to="/">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                      Home
+                    </button>
+                  </Link>
+                  <Link to="/profile">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                      Profile
+                    </button>
+                  </Link>
+                </div>
+              )}
+              {!isAuthenticated && (
+                <button
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                  onClick={() => loginWithRedirect({})}
                 >
-                  Home
-                </Link>
-                <Link
-                  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-                  to="/profile"
+                  Log in
+                </button>
+              )}
+
+              {isAuthenticated && (
+                <button
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                  onClick={() => logout()}
                 >
-                  Profile
-                </Link>
-              </div>
-            )}
-          </nav>
+                  Log out
+                </button>
+              )}
+            </nav>
+          </div>
         </div>
+      </body>
+      <div className="middle-container-home">
+        <img
+          className="logo"
+          src="https://fiverr-res.cloudinary.com/image/upload/t_attachment_thumb,q_auto,f_auto/v1/secured-attachments/message/delivery_attachments/2050301da5fc044b28a1f1e4859d792f-1565013592769/2.jpg?__cld_token__=exp=1565212677~hmac=9b012a25b2002a6907bd875e3639c2bc45f3012a472afed91301a2eb30b7e082"
+          alt="logo"
+        />
       </div>
-    </body>
+      <div className="bottom-container-home">
+        <h1>Simply Fitness</h1>
+      </div>
+      <div className="soft-scroll">
+        <Link to="/searchBar">
+          <button class="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            Click Here
+          </button>
+        </Link>
+      </div>
+    </div>
   );
 };
 
