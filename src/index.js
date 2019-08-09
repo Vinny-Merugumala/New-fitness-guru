@@ -6,6 +6,8 @@ import { Auth0Provider } from "./components/react-auth0-wrapper";
 import { BrowserRouter } from "react-router-dom";
 import config from "./auth_config.json";
 import "./styles/tailwind.css";
+// import store from "./components/redux/store";
+// import { Provider } from "react-redux";
 
 const onRedirectCallback = appState => {
   window.history.replaceState(
@@ -18,6 +20,7 @@ const onRedirectCallback = appState => {
 };
 
 ReactDOM.render(
+  // <Provider store={store}>
   <Auth0Provider
     domain={config.domain}
     client_id={config.clientId}
@@ -28,7 +31,7 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </Auth0Provider>,
-
+  // </Provider>
   document.getElementById("root")
 );
 

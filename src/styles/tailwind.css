@@ -11390,11 +11390,6 @@ video {
   z-index: auto;
 }
 
-/* .home {
-    background-image: url('https://thrivefairhope.com/wp-content/uploads/2018/04/26731758_1054417601377513_3977554821843255825_n.jpg');
-    height: 50vh;
-} */
-
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
@@ -54442,3 +54437,6 @@ video {
     z-index: auto;
   }
 }
+
+
+

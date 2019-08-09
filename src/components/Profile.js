@@ -11,7 +11,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="profile-page">
+      <div className="profile-page" id="profile">
         <img class="" src={user.picture} alt="Profile" />
         <h2>{user.name}</h2>
         <p>{user.email}</p>

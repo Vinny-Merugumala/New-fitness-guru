@@ -1,13 +1,13 @@
 import React from "react";
 import { useAuth0 } from "../components/react-auth0-wrapper";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import "../styles/index.css";
 
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
-    <div className="nav-big">
+    <div className="navbar">
       <body className="lg:px-16 px-6 flex  justify-end items-center flex-wrap py-4">
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-end">
           <label for="menu-toggle" class="cursor-pointer lg:hidden block">
@@ -30,7 +30,14 @@ const NavBar = () => {
             <nav class="flex justify-end">
               {isAuthenticated && (
                 <div>
-                  <Link to="/">
+                  <Link
+                    activeClass="active"
+                    to="home-big-return"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                       Home
                     </button>
@@ -63,23 +70,6 @@ const NavBar = () => {
           </div>
         </div>
       </body>
-      <div className="middle-container-home">
-        <img
-          className="logo"
-          src="https://fiverr-res.cloudinary.com/image/upload/t_attachment_thumb,q_auto,f_auto/v1/secured-attachments/message/delivery_attachments/2050301da5fc044b28a1f1e4859d792f-1565013592769/2.jpg?__cld_token__=exp=1565212677~hmac=9b012a25b2002a6907bd875e3639c2bc45f3012a472afed91301a2eb30b7e082"
-          alt="logo"
-        />
-      </div>
-      <div className="bottom-container-home">
-        <h1>Simply Fitness</h1>
-      </div>
-      <div className="soft-scroll">
-        <Link to="/searchBar">
-          <button class="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-            Click Here
-          </button>
-        </Link>
-      </div>
     </div>
   );
 };
