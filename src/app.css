@@ -1,11 +1,14 @@
 .home {
     /* border:solid red; */
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
+    height: 100vh; 
+     width: 100vw; 
+     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
     position: relative;
+    background-position: 50% 50%;
+    position: absolute;
+    z-index: 100;
+    border: solid red; 
 
 
 }
@@ -48,12 +51,25 @@
     font-size: 50px;
     color:white;
 }
+.bottom-container-mini {
+    display:flex;
+    /* border: solid red; */
+    align-content: center;
+    justify-content: center;
+    /* font-family: 'Kaushan Script',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'; */
+    font-size: 20px;
+    margin-top:60px;
+    color:white;
+}
 
 
 .home-big {
-    border:solid red;
-    height: 100vh;
-    background-image: url('http://www.allwhitebackground.com/images/6/Yoga-Background.jpg');
+    /* border:solid red; */
+    height: 100vh; 
+    width: 100vw;  
+     background-size: cover;
+   background-repeat: no-repeat;
+    background-image: url('https://wallpaperplay.com/walls/full/d/5/2/145825.jpg');
 
 }
 
@@ -71,7 +87,6 @@
 }
 
 
-
 .space-container {
     height:100vh;
     border: solid blue;
@@ -79,15 +94,93 @@
 
 .mapHome-container{
     height:100vh;
-    border: solid orange;
+    /* border: solid orange; */
 }
 
 .white-container{
     display: flex;
-    height:50%;
+    height:30%;
 }
 .parallax-pic {
     display:flex;
-    height: 50%;
+    height: 69.5vh;
     width: 100%;
 }
+
+
+@media screen and (max-width: 600px) {
+    .home-big {
+      margin-top: 2em;
+      font-size: 3em;
+    }
+    .logo{
+        display: none;
+    }
+    .navbar {
+        margin: 0.3em 0 0.1em 0;
+      font-size: 3em;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .home-big {
+      margin: 0.3em 0 0.1em 0;
+      font-size: 3em;
+    }
+    .logo{
+        display: none;
+    }
+    .navbar {
+        margin: 0.3em 0 0.1em 0;
+      font-size: 3em;
+    }
+}
+
+
+.profile-page {
+    border: solid red;
+    height: 100vh;
+}
+
+.marker-icon {
+    cursor: pointer;
+    fill: #ffa500;
+    transition: 0.3s all;
+  }
+  
+  .marker-icon:hover {
+    transform: scale(1.3);
+  }
+  
+  .MyMarker {
+  
+    transition: 1s all;
+  }
+  
+  .MyMarker .active {
+    transform: scale(1.2);
+    fill: #ffff00;
+  }
+
+  .LocationList__container {
+    flex-basis: 25%;
+  }
+  
+  /* Styles for scrollbar */
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #9b9b9b;
+  }
+  /*****/

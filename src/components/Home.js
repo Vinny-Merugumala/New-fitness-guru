@@ -1,5 +1,6 @@
 import React from "react";
 import routes from "../routes";
+// import { Link } from "react-router-dom";
 import { Link } from "react-scroll";
 
 function Home() {
@@ -15,6 +16,9 @@ function Home() {
       <div className="bottom-container-home">
         <h1>Simply Fitness</h1>
       </div>
+      <div className="bottom-container-mini">
+        <h2>FIND YOUR NEARBY FITNESS NEEDS</h2>
+      </div>
       <div className="soft-scroll">
         <Link
           activeClass="active"
@@ -24,12 +28,11 @@ function Home() {
           offset={0}
           duration={500}
         >
-          <button class="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+          <button class="bg-blue-500 hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
             Click Here To Start
           </button>
         </Link>
       </div>
-      {routes}
     </body>
   );
 }

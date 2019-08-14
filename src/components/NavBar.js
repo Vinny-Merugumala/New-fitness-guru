@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "../components/react-auth0-wrapper";
 import { Link } from "react-scroll";
 import "../styles/index.css";
+import { Link as RouteLink } from "react-router-dom";
 
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
@@ -28,24 +29,48 @@ const NavBar = () => {
             id="menu"
           >
             <nav class="flex justify-end">
+              <Link
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                  About
+                </button>
+              </Link>
+              <div>
+                <Link
+                  activeClass="active"
+                  // to="/home"
+                  to="home-big-return"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    Home
+                  </button>
+                </Link>
+              </div>
               {isAuthenticated && (
                 <div>
                   <Link
                     activeClass="active"
-                    to="home-big-return"
+                    to="profile"
                     spy={true}
                     smooth={true}
                     offset={-70}
                     duration={500}
                   >
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                      Home
-                    </button>
-                  </Link>
-                  <Link to="/profile">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                      Profile
-                    </button>
+                    <RouteLink to="/profile">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                        Profile
+                      </button>
+                    </RouteLink>
                   </Link>
                 </div>
               )}

@@ -1,17 +1,20 @@
 import React, { Component } from "react";
-import Map from "./Map";
+import store from "../redux/store";
+import "../app.css";
+
+import LocationList from "./LocationList";
+import Map from "../components/Map";
 
 class MapHome extends Component {
   render() {
+    const state = store.getState();
     return (
-      <div className="mapHome-container" id="mapHomePage">
-        <Map
-          google={this.props.google}
-          center={{ lat: 32.7773406, lng: -96.797665 }}
-          height="300px"
-          zoom={15}
-        />
-      </div>
+      !state.homepageIsOpen && (
+        <div className="Main">
+          <LocationList data={state} />
+          <Map data={state} />
+        </div>
+      )
     );
   }
 }
