@@ -1,5 +1,5 @@
 import React from "react";
-import routes from "../routes";
+// import routes from "../routes";
 // import { Link } from "react-router-dom";
 import { Link } from "react-scroll";
 
@@ -22,7 +22,7 @@ function Home() {
       <div className="soft-scroll">
         <Link
           activeClass="active"
-          to="mapHomePage"
+          to="map"
           spy={true}
           smooth={true}
           offset={0}

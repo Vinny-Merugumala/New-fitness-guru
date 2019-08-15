@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Personal Project which uses the Mapbox Api and Foursquare Api to find nearby fitness Venues
 
 ## Available Scripts
 

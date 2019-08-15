@@ -56,10 +56,11 @@ class MapLanding extends React.Component {
         <div
           className="Landing__hero"
           aria-label="landing page with city background"
+          id="map"
         >
-          <h1 className="Landing__hero_main">Fitness Guru</h1>
+          <h1 className="Landing__hero_main">Fitness Guru's</h1>
           <h2 className="Landing__hero_secondary">
-            Find the best venues in your neighborhood
+            Find the Best Fitness Centers Around You
           </h2>
           <form className="Landing__form">
             <div className="Landing__form__buttons">

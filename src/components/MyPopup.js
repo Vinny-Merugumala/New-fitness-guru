@@ -1,6 +1,7 @@
 import React from "react";
 import { Popup } from "react-mapbox-gl";
 import Typography from "@material-ui/core/Typography";
+require("dotenv").config();
 
 const MyPopup = ({ currentLocation }) => {
   const { name, location, categories } = currentLocation;
@@ -22,7 +23,9 @@ const MyPopup = ({ currentLocation }) => {
       <img
         style={{ display: "block", margin: "auto" }}
         alt={`${name} street view`}
-        src={`https://maps.googleapis.com/maps/api/streetview?size=150x150&location=${lat},${lng}&fov=90&heading=235&pitch=10&key=AIzaSyDAmQJll7kuck1TZyOiIMKQQrSJdKSUr-g`}
+        src={`https://maps.googleapis.com/maps/api/streetview?size=150x150&location=${lat},${lng}&fov=90&heading=235&pitch=10&key=${
+          process.env.REACT_APP_GOOGLE_MAP_API_KEY
+        }`}
       />
       <Typography variant="button" align="center">
         {categories[0].shortName}

@@ -5,12 +5,13 @@ export const fetchLocations = (location = "", details = "") => {
   let options = {
     uri: "https://api.foursquare.com/v2/venues/search",
     qs: {
-      client_id: process.env.FOURSQUARE_CLIENT_ID,
-      client_secret: process.env.FOURSQUARE_CLIENT_SECRET,
+      client_id: process.env.REACT_APP_FOURSQUARE_CLIENT_ID,
+      client_secret: process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET,
       v: 20180323,
       near: location,
-      limit: 30,
-      intent: "browse"
+      limit: 100,
+      intent: "browse",
+      categoryId: "4bf58dd8d48988d175941735"
     },
     json: true
   };

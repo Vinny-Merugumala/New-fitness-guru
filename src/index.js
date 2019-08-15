@@ -7,7 +7,7 @@ import { HashRouter } from "react-router-dom";
 import config from "./auth_config.json";
 import "./styles/tailwind.css";
 import store from "./redux/store";
-// import { Provider } from "react-redux";
+import { Provider } from "react-redux";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 const onRedirectCallback = appState => {
@@ -21,20 +21,20 @@ const onRedirectCallback = appState => {
 };
 const render = () => {
   ReactDOM.render(
-    // <Provider store={store}>
-    <Auth0Provider
-      domain={config.domain}
-      client_id={config.clientId}
-      redirect_uri={window.location.origin}
-      onRedirectCallback={onRedirectCallback}
-    >
-      <HashRouter>
-        <ParallaxProvider>
-          <App />
-        </ParallaxProvider>
-      </HashRouter>
-    </Auth0Provider>,
-    // </Provider>
+    <Provider store={store}>
+      <Auth0Provider
+        domain={config.domain}
+        client_id={config.clientId}
+        redirect_uri={window.location.origin}
+        onRedirectCallback={onRedirectCallback}
+      >
+        <HashRouter>
+          <ParallaxProvider>
+            <App />
+          </ParallaxProvider>
+        </HashRouter>
+      </Auth0Provider>
+    </Provider>,
     document.getElementById("root")
   );
 };

@@ -8,7 +8,7 @@ import MyPopup from "./MyPopup";
 require("dotenv").config();
 
 const Map = ReactMapboxGl({
-  accessToken: process.env.MAP_TOKEN
+  accessToken: process.env.REACT_APP_MAP_TOKEN
 });
 
 class MyMap extends Component {

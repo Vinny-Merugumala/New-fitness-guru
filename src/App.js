@@ -7,6 +7,7 @@ import Navbar from "./components/NavBar";
 import Home from "./components/Home";
 import MapLanding from "./components/MapLanding";
 // import routes from "./routes";
+import Header from "./components/Header";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         <Home />
         <Space />
         <MapLanding />
+        <Header />
         <MapHome />
       </div>
     );

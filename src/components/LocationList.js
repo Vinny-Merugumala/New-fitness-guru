@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import store from "../redux/store";
 import { withStyles } from "@material-ui/core/styles";
-// import SearchFilter from "./SearchFilter";
 import Typography from "@material-ui/core/Typography";
 import MenuList from "@material-ui/core/MenuList";
 import MenuItem from "@material-ui/core/MenuItem";
