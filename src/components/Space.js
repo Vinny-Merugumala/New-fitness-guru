@@ -5,14 +5,12 @@ function Space() {
   return (
     <div className="space-container" id="about">
       <div className="white-container">
-        <div className="px-8 py-12 mt-4 md:mt-0 md:ml-6">
-          <h1 className="text-5xl font-bold text-red-600 leading-tight mt-4 md:mt-0 md:ml-6">
-            Fitness Gurus is a search service that makes finding your nearby
-            fitness needs easier. Just input your city in the search below, and
-            find nearby fitness centers.
-            <span className="text-blue-500">
+        <div className="px-8 py-12 mt-4 md:mt-0 md:ml-6 sm: mt-0 sm: ml-6 ">
+          <h1 className="text-5xl font-bold text-white leading-tight mt-4 sm: mt-0 sm: ml-6 md:mt-0 md:ml-6">
+            Fitness Near You. Just input your city in the search below
+            {/* <span className="text-blue-500">
               ... Fitness Connection Free of charge. Use it.
-            </span>
+            </span> */}
           </h1>
         </div>
       </div>

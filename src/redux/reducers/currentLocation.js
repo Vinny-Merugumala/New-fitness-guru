@@ -9,7 +9,7 @@ export const currentLocation = (state = {}, action) => {
       return action.payload;
     }
     case RESET_CURRENT_LOCATION: {
-      return {}; //let's return empty object, meaning there is no current location selected
+      return {};
     }
     default: {
       return state;

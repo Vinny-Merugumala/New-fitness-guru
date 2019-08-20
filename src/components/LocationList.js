@@ -8,8 +8,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import changeCurrentLocation from "../actions/changeCurrentLocation";
 import { isCurrentLocation, filterLocations } from "../helpers";
+import Button from "@material-ui/core/Button";
 import "../app.css";
 import changeMapFocus from "../actions/changeMapFocus";
+import FavoriteOutlinedIcon from "@material-ui/icons/FavoriteOutlined";
 
 const styles = theme => ({
   list: {
@@ -44,6 +46,7 @@ const LocationList = ({ classes, data }) => {
     const { lng, lat } = venue.location;
     store.dispatch(changeCurrentLocation(venue));
     store.dispatch(changeMapFocus([lng, lat]));
+    console.warn();
   };
 
   return (
@@ -66,6 +69,9 @@ const LocationList = ({ classes, data }) => {
               primary={venue.name}
               secondary={venue.location.address}
             />
+            <Button>
+              <FavoriteOutlinedIcon />
+            </Button>
           </MenuItem>
         ))}
       </MenuList>

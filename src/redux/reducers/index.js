@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 
-import { homepageIsOpen } from "./homepage";
-import { controls } from "./control";
-import { currentLocation } from "./currentLocation";
-import { currentFocus } from "./currentFocus";
-import { filter } from "./filter";
-import { locations } from "./locations";
-import { search } from "./search";
+import { homepageIsOpen } from "./reducer";
+import { controls } from "./reducer";
+import { currentLocation } from "./reducer";
+import { currentFocus } from "./reducer";
+import { filter } from "./reducer";
+import { locations } from "./reducer";
+import { search } from "./reducer";
 
 export default combineReducers({
   homepageIsOpen,

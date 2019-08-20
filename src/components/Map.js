@@ -5,6 +5,7 @@ import { filterLocations } from "../helpers";
 import resetCurrentLocation from "../actions/resetCurrentLocation";
 import MapMarker from "./MapMarker";
 import MyPopup from "./MyPopup";
+
 require("dotenv").config();
 
 const Map = ReactMapboxGl({
@@ -23,7 +24,7 @@ class MyMap extends Component {
           style="mapbox://styles/stlbabu/cjzbisj4l1a281cnwq56v0yaz"
           containerStyle={{ width: "100%", height: "100%" }}
           center={currentFocus}
-          zoom={[13]}
+          zoom={[10]}
           onClick={() => store.dispatch(resetCurrentLocation())}
         >
           {filteredVenues.map(venue => (

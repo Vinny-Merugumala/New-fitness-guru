@@ -5,11 +5,15 @@ import Chip from "@material-ui/core/Chip";
 import { fetchLocations } from "../helpers/API";
 import { withStyles } from "@material-ui/core/styles";
 import store from "../store/index";
-import { changeSearch } from "../actions/changeSearch";
-import { pressControlButton } from "../actions/pressControlButton";
+import {
+  changeSearch,
+  populateLocations,
+  pressControlButton
+} from "../redux/reducers/reducer";
+// import { pressControlButton } from "../actions/pressControlButton";
 import { calculateAverageCoordinates } from "../helpers";
-import { populateLocations } from "../actions/populateLocations";
-import changeMapFocus from "../actions/changeMapFocus";
+// import { populateLocations } from "../actions/populateLocations";
+import changeMapFocus from "../redux/reducers/reducer";
 
 const styles = theme => ({
   root: {

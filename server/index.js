@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
+const { register, login } = require("./controllers/authController");
+// const authMiddle = require("./middleware/authMiddleware");
 
 const app = express();
 app.use(express.json());
@@ -22,17 +24,16 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
   console.log("Database Connected");
 });
 
-// app.post("/auth/register", register);
-// app.post("/auth/login", login);
-// app.get("/api/user", function(req, res) {
-//   if (req.session.user) {
-//     res.status(200).json(req.session.user);
-//   } else {
-//     res.status(404).json({
-//       error: "User Not Found"
-//     });
-//   }
-// });
+// endpoints
+app.post("/auth/register", register);
+app.post("/auth/login", login);
+app.get("/api/user", function(req, res) {
+  if (req.session.user) {
+    res.status(200).json(req.session.user);
+  } else {
+    res.status(400).json("User logged in");
+  }
+});
 
 app.listen(process.env.SERVER_PORT, () =>
   console.log(`Listening on ${process.env.SERVER_PORT}`)

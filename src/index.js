@@ -2,38 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { Auth0Provider } from "./components/react-auth0-wrapper";
 import { HashRouter } from "react-router-dom";
-import config from "./auth_config.json";
+
 import "./styles/tailwind.css";
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import { ParallaxProvider } from "react-scroll-parallax";
 
-const onRedirectCallback = appState => {
-  window.history.replaceState(
-    {},
-    document.title,
-    appState && appState.targetUrl
-      ? appState.targetUrl
-      : window.location.pathname
-  );
-};
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <Auth0Provider
-        domain={config.domain}
-        client_id={config.clientId}
-        redirect_uri={window.location.origin}
-        onRedirectCallback={onRedirectCallback}
-      >
-        <HashRouter>
-          <ParallaxProvider>
-            <App />
-          </ParallaxProvider>
-        </HashRouter>
-      </Auth0Provider>
+      <HashRouter>
+        <App />
+      </HashRouter>
     </Provider>,
     document.getElementById("root")
   );

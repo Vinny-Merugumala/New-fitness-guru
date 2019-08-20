@@ -2,6 +2,7 @@ export const isCurrentLocation = (currentVenue, venue) =>
   currentVenue.id === venue.id;
 
 export const calculateAverageCoordinates = venues => {
+  console.warn(venues);
   const length = venues.length || 1;
   return venues
     .map(venue => [venue.location.lng, venue.location.lat])

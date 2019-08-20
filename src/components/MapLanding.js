@@ -8,7 +8,6 @@ import { changeLocation, changeSearch } from "../actions/changeSearch";
 import { openHomepage } from "../actions/openHomepage";
 import { calculateAverageCoordinates } from "../helpers";
 import changeMapFocus from "../actions/changeMapFocus";
-// import { pressControlButton } from "../actions/pressControlButton";
 import Buttons from "../components/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import SearchIcon from "@material-ui/icons/Search";
@@ -23,7 +22,6 @@ class MapLanding extends React.Component {
   handleClick = (query, id) => event => {
     event.preventDefault();
     store.dispatch(changeSearch(query));
-    // store.dispatch(pressControlButton(id));
   };
 
   handleChange = event => {

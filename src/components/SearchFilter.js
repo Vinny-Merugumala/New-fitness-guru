@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import store from "../store";
-import applyNewFilter from "../actions/applyNewFilter";
+import applyNewFilter from "../redux/reducers/reducer";
 
 const styles = theme => ({
   container: {

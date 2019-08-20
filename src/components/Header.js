@@ -6,8 +6,7 @@ import { openHomepage } from "../actions/openHomepage";
 import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import HomeIcon from "@material-ui/icons/Home";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const styles = {
   root: {
@@ -26,11 +25,9 @@ const Header = props => {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Toolbar className={classes.toolbar}>
-          <Typography variant="title" color="inherit">
-            Fitness Guru's
-          </Typography>
+          <div className="">Fitness Guru's</div>
           <Button onClick={() => store.dispatch(openHomepage(true))}>
-            <HomeIcon className={classes.icon} color="primary" />
+            <DeleteIcon />
           </Button>
         </Toolbar>
       </AppBar>

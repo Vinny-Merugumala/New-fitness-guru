@@ -1,14 +1,18 @@
 import React from "react";
-import { Switch } from "react-router-dom";
-import Profile from "./components/Profile";
-import PrivateRoute from "./components/PrivateRoute";
-// import MapHome from "./components/MapHome";
-// import Home from "./components/Home";
+import { Switch, Route } from "react-router-dom";
+import Account from "./components/Account";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Home from "./components/Home";
+import MapLanding from "./components/MapLanding";
 
 export default (
   <Switch>
-    {/* <Route path="/home" component={Home} /> */}
-    {/* <Route path="/MapHome" component={MapHome} /> */}
-    <PrivateRoute path="/profile" component={Profile} />
+    <Route path="/register" component={Register} />
+    <Route path="/account" component={Account} />
+    <Route path="/login" component={Login} />
+    <Route exact path="/" component={Home} />
+    <Route path="/mapLanding" component={MapLanding} />
+    <Route path="/" render={() => <h1>404 page not found</h1>} />
   </Switch>
 );
