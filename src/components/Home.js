@@ -9,7 +9,7 @@ function Home() {
       <div className="middle-container-home">
         <img
           className="logo"
-          src="https://fiverr-res.cloudinary.com/image/upload/t_attachment_thumb,q_auto,f_auto/v1/secured-attachments/message/delivery_attachments/2050301da5fc044b28a1f1e4859d792f-1565013592769/2.jpg?__cld_token__=exp=1566337447~hmac=cae1ee63581d39c0b3d4090cb96941a9100325f27ebede5dde422620189bd5de"
+          src="https://fiverr-res.cloudinary.com/image/upload/t_collaboration_hd,q_auto,f_auto/v1/secured-attachments/message/delivery_attachments/2050301da5fc044b28a1f1e4859d792f-1565013592769/2.jpg?__cld_token__=exp=1566423274~hmac=bf0f621fe0d8e41550f8a4aab6dd1664fdb09bae83e2a17841de5de924295072"
           alt="logo"
         />
       </div>

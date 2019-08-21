@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import "../app.css";
 import { Link } from "react-router-dom";
 import "../styles/index.css";
-import Axios from "axios";
-import { resetState } from "../redux/reducers";
 
 class NavBar extends Component {
   constructor() {
