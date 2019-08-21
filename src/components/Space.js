@@ -1,23 +1,35 @@
 import React from "react";
-// import { Parallax } from "react-scroll-parallax";
+import { Link } from "react-scroll";
 
 function Space() {
   return (
-    <div className="space-container" id="about">
-      <div className="white-container">
-        <div className="px-8 py-12 mt-4 md:mt-0 md:ml-6 sm: mt-0 sm: ml-6 ">
-          <h1 className="text-5xl font-bold text-white leading-tight mt-4 sm: mt-0 sm: ml-6 md:mt-0 md:ml-6">
-            Fitness Near You. Just input your city in the search below
-            {/* <span className="text-blue-500">
-              ... Fitness Connection Free of charge. Use it.
-            </span> */}
-          </h1>
-        </div>
+    <body className="about-big" id="home-big-return">
+      <div className="middle-container-home" />
+      <div className="bottom-container-home">
+        <h1>Simply Fitness</h1>
       </div>
-      {/* <Parallax className="parallax-pic" y={[-20, 20]} tagOuter="figure"> */}
 
-      {/* </Parallax> */}
-    </div>
+      <div className="bottom-container-mini">
+        <h2>
+          Our mission is to deliver you all of your fitness needs. Use the
+          search engine below to find fitness centers near you.
+        </h2>
+      </div>
+      <div className="soft-scroll">
+        <Link
+          activeClass="active"
+          to="map"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <button class="bg-blue-500 hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            Click Here To Start
+          </button>
+        </Link>
+      </div>
+    </body>
   );
 }
 

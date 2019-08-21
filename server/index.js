@@ -2,8 +2,13 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
-const { register, login } = require("./controllers/authController");
-// const authMiddle = require("./middleware/authMiddleware");
+const { register, login, logout } = require("./controllers/authController");
+const {
+  getToDoTasks,
+  updateToDoTask,
+  addToDoTask,
+  deleteToDoTask
+} = require("./controllers/toDoController");
 
 const app = express();
 app.use(express.json());
@@ -28,6 +33,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 // endpoints
 app.post("/auth/register", register);
 app.post("/auth/login", login);
+app.get("/auth/logout", logout);
 app.get("/api/user", function(req, res) {
   if (req.session.user) {
     res.status(200).json(req.session.user);
@@ -35,6 +41,14 @@ app.get("/api/user", function(req, res) {
     res.status(400).json("User logged in");
   }
 });
+
+app.get("/api/toDo", getToDoTasks);
+app.post("/api/toDo", addToDoTask);
+app.put("/api/toDo/:id", updateToDoTask);
+app.delete("/api/toDo/:id", deleteToDoTask);
+// app.post("/api/Notes", checkForUser, addNotes);
+// app.put("/api/posts/:country", checkForUser, editNotes);
+// app.delete("/api/posts/:id", checkForUser, deleteNotes);
 
 app.listen(process.env.SERVER_PORT, () =>
   console.log(`Listening on ${process.env.SERVER_PORT}`)

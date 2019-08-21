@@ -1,28 +1,10 @@
-.home {
 
-    height: 100vh; 
-     width: 100vw; 
-     background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    background-position: 50% 50%;
-    position: absolute;
-    z-index: 100;
-    border: solid red; 
-
-
-}
 
  .middle-container-home {
-    /* border: solid red; */
     display:flex;
     align-content: center;
     justify-content: center;
     height: 30vh;
-    
-    
-    
-
 } 
 .navbar{
     /* display:flex; */
@@ -66,6 +48,14 @@
      background-size: cover;
    background-repeat: no-repeat;
     background-image: url('https://wallpaperplay.com/walls/full/d/5/2/145825.jpg');
+
+}
+.about-big {
+  height: 100vh; 
+  width: 100vw;  
+   background-size: cover;
+ background-repeat: no-repeat;
+  background-image: url('http://monkeyjunctioncrossfit.com/wp-content/uploads/2014/08/Gym-background-Small.jpg');
 
 }
 
@@ -377,3 +367,187 @@
         padding: 60px 0;
       }
   }
+
+
+.account {
+  height: 100vh;
+}
+.container {
+  border-radius: 5px;
+  background-color: #2F9FF4;
+  padding: 10px;
+  align-items: center;
+  width:50vw;
+  height:100vh;
+  justify-content: center;
+  align-content: space-between;
+  border:solid black;
+  margin-left: 400px;
+
+}
+#todo-date {
+  display:flex;
+  justify-content: center;
+  margin-right: 8ch;
+  color: black;
+  
+}
+#todo-time {
+  display:flex;
+  justify-content: center;
+  margin-right: 8ch;
+  color: black;
+
+}
+#todo-description {
+  display:flex;
+  justify-content: center;
+  margin-right: 8ch;
+  color: black;
+}
+#addnew-input{
+  display:flex;
+  justify-content: center;
+  /* margin-right: 8ch; */
+  margin-top: 8ch;
+  color: black;
+  align-content: space-between
+
+}
+#todo-input-bars{
+  display:flex;
+  justify-content: center;
+  margin-right: 5ch;
+}
+
+#todo {
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:black;
+  background-color:#4eb5f1;
+  text-align:center;
+  transition: all 0.2s; 
+  }
+
+
+  #todo {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:black;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s; 
+    }
+    #addnew {
+        display:inline-block;
+        padding:0.3em 1.2em;
+        margin:0 0.3em 0.3em 0;
+        border-radius:2em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#FFFFFF;
+        background-color:#4eb5f1;
+        text-align:center;
+        transition: all 0.2s; 
+        }
+ 
+    #headername {
+        display:flex;
+        justify-items: center;
+        justify-content: center;
+
+    
+    }
+    
+    #todo-input-bars{
+        display:flex;
+        justify-content: center;
+        margin-right: 5ch;
+    }
+    
+    #header-box {
+        display:flex;
+        justify-content: center;
+        /* font-size:40px; */
+        background-color: black;
+    }
+    #img-box {
+        display: flex;
+        justify-content: center
+    }
+    #todo-date {
+        display:flex;
+        justify-content: center;
+        margin-right: 8ch;
+        color: white;
+        
+    }
+    #todo-time {
+        display:flex;
+        justify-content: center;
+        margin-right: 8ch;
+        color: white;
+    
+    }
+    #todo-description {
+        display:flex;
+        justify-content: center;
+        margin-right: 8ch;
+        color: white;
+    }
+    
+    #addnew-input{
+        display:flex;
+        justify-content: center;
+        /* margin-right: 8ch; */
+        margin-top: 8ch;
+        color: white;
+        align-content: space-between
+    
+    }
+    
+  
+    
+   
+     .container {
+        border-radius: 5px;
+        background-color: #2F9FF4;
+        padding: 10px;
+        align-items: center;
+        width:50vw;
+        height:50vh;
+        justify-content: center;
+        align-content: space-between;
+        border:solid black;
+        /* margin-left: 400px; */
+    
+      }
+
+  .main-container {
+    height:100vh;
+    width:100vw;
+  }
+  .navbar-todo {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 200px; */
+    /* border: 1px solid black; */
+    margin-top: 50px;
+    width:100vw;
+    height:5vh;
+
+}

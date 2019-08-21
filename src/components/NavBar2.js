@@ -1,70 +1,55 @@
-import React from "react";
-import { Link } from "react-scroll";
-import "../styles/index.css";
-import { Link as RouteLink } from "react-router-dom";
-import routes from "../routes";
+// import React from "react";
+// import { Link } from "react-scroll";
+// import "../styles/index.css";
+// import { Link as RouteLink } from "react-router-dom";
+// // import routes from "../routes";
 
-function NavBar() {
-  return (
-    <div className="navbar">
-      <body className="lg:px-16 px-6 flex  justify-end items-center flex-wrap py-4">
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-end">
-          <label for="menu-toggle" class="cursor-pointer lg:hidden block">
-            <svg
-              class="fill-current text-white-900"
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-            >
-              <title>menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </label>
-          <input class="hidden" type="checkbox" id="menu-toggle" />
-          <div
-            class="hidden lg:flex lg:items-center lg:w-auto w-full"
-            id="menu"
-          />
-          <nav className="sm:flex justify-end items-center justify-between">
-            <Link
-              activeClass="active"
-              to="about"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-            >
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full sm:flex sm:items-center sm:w-auto  md:flex md:items-center md:w-auto">
-                About
-              </button>
-            </Link>
-            <div>
-              <Link
-                activeClass="active"
-                // to="/home"
-                to="home-big-return"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                  Home
-                </button>
-              </Link>
-            </div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-              <RouteLink to="/login">Log in</RouteLink>
-            </button>
-          </nav>
-        </div>
-      </body>
-    </div>
-  );
-}
+// function NavBar() {
+//   return (
+//     <div className="navbar">
+//       <body className="lg:px-16 px-6 flex  justify-end items-center flex-wrap py-4">
+//         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-end">
+//           <label for="menu-toggle" class="cursor-pointer lg:hidden block">
+//             <svg
+//               class="fill-current text-white-900"
+//               xmlns="http://www.w3.org/2000/svg"
+//               width="20"
+//               height="20"
+//               viewBox="0 0 20 20"
+//             >
+//               <title>menu</title>
+//               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+//             </svg>
+//           </label>
+//           <input class="hidden" type="checkbox" id="menu-toggle" />
+//           <div
+//             class="hidden lg:flex lg:items-center lg:w-auto w-full"
+//             id="menu"
+//           />
+//           <nav className="sm:flex justify-end items-center justify-between">
+//             <RouteLink to="/about">
+//               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full sm:flex sm:items-center sm:w-auto  md:flex md:items-center md:w-auto">
+//                 About
+//               </button>
+//             </RouteLink>
+//             <div>
+//               <RouteLink to="/">
+//                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+//                   Home
+//                 </button>
+//               </RouteLink>
+//             </div>
+//             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+//               <RouteLink to="/login">Log in</RouteLink>
+//             </button>
+//           </nav>
+//         </div>
+//       </body>
+//     </div>
+//   );
+// }
 
-export default NavBar;
+// export default NavBar;
 
 // import React, { Component } from "react";
 // import axios from "axios";

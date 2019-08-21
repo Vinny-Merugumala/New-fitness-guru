@@ -7,6 +7,7 @@ import { currentFocus } from "./reducer";
 import { filter } from "./reducer";
 import { locations } from "./reducer";
 import { search } from "./reducer";
+import { updateName, updateUsername, resetState } from "./auth";
 
 export default combineReducers({
   homepageIsOpen,
@@ -15,5 +16,8 @@ export default combineReducers({
   currentFocus,
   filter,
   locations,
-  search
+  search,
+  updateName,
+  updateUsername,
+  resetState
 });

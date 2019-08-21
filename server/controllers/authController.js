@@ -41,5 +41,9 @@ module.exports = {
         error: "INCORRECT_USERNAME_OR_PASSWORD"
       });
     }
+  },
+  logout: async function(req, res) {
+    req.session.destroy();
+    return res.sendStatus(200);
   }
 };
