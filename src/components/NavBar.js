@@ -2,11 +2,19 @@ import React, { Component } from "react";
 import "../app.css";
 import { Link } from "react-router-dom";
 import "../styles/index.css";
+import axios from "axios";
 
 class NavBar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
+
+  logOutUser = () => {};
+
+  componentDidMount() {
+    axios.get("/auth/logout");
+  }
+
   render() {
     return (
       <body class="antialiased bg-gray-200">
@@ -39,6 +47,14 @@ class NavBar extends Component {
                     class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
                   >
                     Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/logout"
+                    class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                  >
+                    Logout
                   </Link>
                 </li>
                 <li>

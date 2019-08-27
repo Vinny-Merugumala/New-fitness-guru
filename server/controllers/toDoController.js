@@ -9,6 +9,8 @@ const toDoTasks = [
 ];
 let id = 2;
 const getToDoTasks = (req, res) => {
+  const db = req.app.get("db");
+
   res.json(toDoTasks);
 };
 
@@ -25,9 +27,7 @@ const addToDoTask = (req, res) => {
 const updateToDoTask = (req, res) => {
   const { id } = req.params;
   const { date, time, description } = req.body;
-  console.log(id);
   const index = toDoTasks.findIndex(toDo => toDo.id === +id);
-  // console.log(index);
 
   edittedObject = {
     date,
@@ -37,9 +37,6 @@ const updateToDoTask = (req, res) => {
   };
   toDoTasks[index] = edittedObject;
   res.json(toDoTasks);
-
-  // toDoTasks.splice(index, 1, edittedObject);
-  // console.log(toDoTasks);
 };
 
 const deleteToDoTask = (req, res) => {

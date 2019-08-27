@@ -2,16 +2,13 @@ import React from "react";
 // import routes from "../routes";
 // import { Link } from "react-router-dom";
 import { Link } from "react-scroll";
+import Img from "../styles/imgs/2.jpg";
 
 function Home() {
   return (
     <body className="home-big" id="home-big-return">
       <div className="middle-container-home">
-        <img
-          className="logo"
-          src="https://fiverr-res.cloudinary.com/image/upload/t_collaboration_hd,q_auto,f_auto/v1/secured-attachments/message/delivery_attachments/2050301da5fc044b28a1f1e4859d792f-1565013592769/2.jpg?__cld_token__=exp=1566423274~hmac=bf0f621fe0d8e41550f8a4aab6dd1664fdb09bae83e2a17841de5de924295072"
-          alt="logo"
-        />
+        <img className="logo" src={Img} alt="logo" />
       </div>
       <div className="bottom-container-home">
         <h1>Simply Fitness</h1>

@@ -44,42 +44,53 @@ export default class ToDoItem extends Component {
 
   render() {
     return (
-      <ul>
-        <div class="container">
-          <div id="todo-date">
-            <h3>{this.props.date}</h3>
-          </div>
-          <div id="todo-time">
-            <h3>{this.props.time}</h3>
-          </div>
-          <div id="todo-description">
-            <h3>{this.props.description}</h3>
-          </div>
-
-          <div id="todo-input-bars">
+      <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
+        <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+          <div class="mb-4">
+            <h1 class="text-grey-darkest">Gym Calendar</h1>
             <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
               placeholder="Add Date"
               name="date"
               value={this.state.date}
               onChange={this.handleChange}
             />
             <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
               placeholder="Add Time"
               name="time"
               value={this.state.time}
               onChange={this.handleChange}
             />
             <input
-              placeholder="Add Description"
+              class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+              placeholder="Add Workout Description"
               name="description"
               value={this.state.description}
               onChange={this.handleChange}
             />
-            <button onClick={this.handleClick}>Update</button>
-            <button onClick={this.handleClick2}>Delete</button>
+            <button
+              class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green"
+              onClick={this.handleClick}
+            >
+              Update
+            </button>
+            <button
+              class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green"
+              onClick={this.handleClick2}
+            >
+              Delete
+            </button>
+            <div class="flex mb-4 items-center">
+              <h3 class="w-full text-grey-darkest">{this.props.date}</h3>
+
+              <h3 class="w-full text-grey-darkest">{this.props.time}</h3>
+
+              <h3 class="w-full text-grey-darkest">{this.props.description}</h3>
+            </div>
           </div>
         </div>
-      </ul>
+      </div>
     );
   }
 }

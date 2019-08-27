@@ -21,29 +21,31 @@ class Account extends Component {
     // }
 
     return (
-      <div className="main-container">
-        <nav className="navbar-todo">
-          <button
-            id="todo"
-            onClick={() => {
-              this.setState({ view: "toDoTasks" });
-            }}
-          >
-            Notes
-          </button>
-          <button
-            id="addnew"
-            onClick={() => {
-              this.setState({ view: "newTasks" });
-            }}
-          >
-            Add New Note
-          </button>
-        </nav>
-        {this.state.view === "toDoTasks" ? <ToDoList /> : null}
-        {this.state.view === "newTasks" && (
-          <NewTask changeView={this.changeView} />
-        )}
+      <div className="account-page">
+        <div className="main-container">
+          <nav className="navbar-todo">
+            <button
+              id="todo"
+              onClick={() => {
+                this.setState({ view: "toDoTasks" });
+              }}
+            >
+              Notes
+            </button>
+            <button
+              id="addnew"
+              onClick={() => {
+                this.setState({ view: "newTasks" });
+              }}
+            >
+              Add New Note
+            </button>
+          </nav>
+          {this.state.view === "toDoTasks" ? <ToDoList /> : null}
+          {this.state.view === "newTasks" && (
+            <NewTask changeView={this.changeView} />
+          )}
+        </div>
       </div>
     );
   }

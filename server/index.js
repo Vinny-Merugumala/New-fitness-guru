@@ -46,9 +46,6 @@ app.get("/api/toDo", getToDoTasks);
 app.post("/api/toDo", addToDoTask);
 app.put("/api/toDo/:id", updateToDoTask);
 app.delete("/api/toDo/:id", deleteToDoTask);
-// app.post("/api/Notes", checkForUser, addNotes);
-// app.put("/api/posts/:country", checkForUser, editNotes);
-// app.delete("/api/posts/:id", checkForUser, deleteNotes);
 
 app.listen(process.env.SERVER_PORT, () =>
   console.log(`Listening on ${process.env.SERVER_PORT}`)

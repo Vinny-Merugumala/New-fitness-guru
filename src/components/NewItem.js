@@ -71,39 +71,46 @@ export default class NewTask extends Component {
           }
         }}
       >
-        <div class="container">
-          <div id="addnew-input">
+        <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
+          <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+            <div class="mb-4"></div>
             <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
               placeholder="Add Date"
               name="date"
               value={this.state.date}
               onChange={this.handleChange}
             />
             <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
               placeholder="Add Time"
               name="time"
               value={this.state.time}
               onChange={this.handleChange}
             />
             <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
               placeholder="Add Description"
               name="description"
               value={this.state.description}
               onChange={this.handleChange}
             />
-            <input
-              type="checkbox"
-              placeholder="Add Description"
-              name="finished"
-              value={this.state.finished}
-              onChange={this.handleToggle}
-            />
-            <label>Toggle for Finished</label>
 
-            <button type="submit">submit</button>
-            <button type="reset">Cancel</button>
+            <button
+              class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green"
+              type="submit"
+            >
+              submit
+            </button>
+            <button
+              class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green"
+              type="reset"
+            >
+              Cancel
+            </button>
           </div>
         </div>
+
         {this.state.error ? <p>{this.state.error}</p> : null}
       </form>
     );
