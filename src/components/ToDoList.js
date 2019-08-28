@@ -15,7 +15,7 @@ class ToDoList extends Component {
     axios
       .get(`/api/toDo?${this.props.username}`)
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         this.setState({ toDoTasks: response.data });
       })
       .catch(error => {
@@ -54,7 +54,7 @@ class ToDoList extends Component {
 
 export default connect(
   (state, ownProps) => {
-    console.log(state);
+    // console.log(state);
     return {
       username: state.authreducer.username
     };

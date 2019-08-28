@@ -26,11 +26,11 @@ class ToDoItem extends Component {
 
   handleClick = () => {
     const { date, time, description, id } = this.state;
-    const { username } = this.props;
+    // const { username } = this.props;
     axios
       .put(`/api/toDo/${id}`, { date, time, description })
       .then(() => {
-        console.log("done");
+        window.location.reload();
       })
       .catch(err => {
         return console.log(err);
@@ -46,7 +46,7 @@ class ToDoItem extends Component {
   };
 
   render() {
-    console.log(this.props.id);
+    // console.log(this.props.id);
     return (
       <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
         <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">

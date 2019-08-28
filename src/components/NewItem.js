@@ -26,7 +26,7 @@ class NewTask extends Component {
   }
 
   render() {
-    console.log(this.state.finished);
+    // console.log(this.state.finished);
     return (
       <form
         onSubmit={e => {
@@ -118,7 +118,7 @@ class NewTask extends Component {
 }
 export default connect(
   (state, ownProps) => {
-    console.log(state);
+    // console.log(state);
     return {
       username: state.authreducer.username
     };
