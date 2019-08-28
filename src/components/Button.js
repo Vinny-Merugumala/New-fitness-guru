@@ -3,8 +3,6 @@ import "../app.css";
 import Tooltip from "@material-ui/core/Tooltip";
 
 const Buttons = ({ controls, onClick }) => {
-  console.warn(controls);
-
   return (
     <div className="Landing__form__buttons">
       {controls

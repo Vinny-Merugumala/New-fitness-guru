@@ -46,7 +46,6 @@ const LocationList = ({ classes, data }) => {
     const { lng, lat } = venue.location;
     store.dispatch(changeCurrentLocation(venue));
     store.dispatch(changeMapFocus([lng, lat]));
-    console.warn();
   };
 
   return (

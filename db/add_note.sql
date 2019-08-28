@@ -1,5 +1,5 @@
 INSERT INTO notes
-(date, time, description)
+(date, time, description, username)
 VALUES
-($1, $2, $3)
+($1, $2, $3, $4)
 

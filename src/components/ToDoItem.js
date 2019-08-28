@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { connect } from "react-redux";
 
-export default class ToDoItem extends Component {
+class ToDoItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +15,8 @@ export default class ToDoItem extends Component {
     this.setState({
       date: this.props.date,
       time: this.props.time,
-      description: this.props.description
+      description: this.props.description,
+      id: this.props.id
     });
   }
 
@@ -23,11 +25,12 @@ export default class ToDoItem extends Component {
   };
 
   handleClick = () => {
-    const { date, time, description } = this.state;
+    const { date, time, description, id } = this.state;
+    const { username } = this.props;
     axios
-      .put("/api/toDo/" + this.props.id, { date, time, description })
-      .then(response => {
-        this.props.updateToDoTasks(response.data);
+      .put(`/api/toDo/${id}`, { date, time, description })
+      .then(() => {
+        console.log("done");
       })
       .catch(err => {
         return console.log(err);
@@ -37,12 +40,13 @@ export default class ToDoItem extends Component {
     const { date, time, description } = this.state;
     axios
       .delete("/api/toDo/" + this.props.id, { date, time, description })
-      .then(response => {
-        this.props.deleteToDoTasks(response.data);
+      .then(() => {
+        window.location.reload();
       });
   };
 
   render() {
+    console.log(this.props.id);
     return (
       <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
         <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
@@ -94,3 +98,11 @@ export default class ToDoItem extends Component {
     );
   }
 }
+export default connect(
+  (state, ownProps) => {
+    return {
+      username: state.username
+    };
+  },
+  {}
+)(ToDoItem);

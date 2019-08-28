@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../app.css";
+import { connect } from "react-redux";
 
-export default class NewTask extends Component {
+class NewTask extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,18 +31,17 @@ export default class NewTask extends Component {
       <form
         onSubmit={e => {
           e.preventDefault();
-          if (
-            !this.state.description // maybe try this.state.example === undefined ||
-          ) {
+          if (!this.state.description) {
             this.setState({
-              error: "Please add a description" //maybe try res.sendStatus here
+              error: "Please add a description"
             });
           } else if (this.state.finished === false) {
             axios
               .post("/api/toDo", {
                 date: this.state.date,
                 time: this.state.time,
-                description: this.state.description
+                description: this.state.description,
+                username: this.props.username
               })
               .then(response => {
                 this.props.changeView("toDoTasks");
@@ -116,3 +116,12 @@ export default class NewTask extends Component {
     );
   }
 }
+export default connect(
+  (state, ownProps) => {
+    console.log(state);
+    return {
+      username: state.authreducer.username
+    };
+  },
+  {}
+)(NewTask);

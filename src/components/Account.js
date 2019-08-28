@@ -52,7 +52,6 @@ class Account extends Component {
 }
 
 function mapStateToProps(reduxState) {
-  console.log(reduxState);
   return {
     username: reduxState.username,
     name: reduxState.name

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ToDoItem from "./ToDoItem";
+import { connect } from "react-redux";
 
-export default class ToDoList extends Component {
+class ToDoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,8 +13,9 @@ export default class ToDoList extends Component {
   }
   componentDidMount() {
     axios
-      .get("/api/toDo")
+      .get(`/api/toDo?${this.props.username}`)
       .then(response => {
+        console.log(response.data);
         this.setState({ toDoTasks: response.data });
       })
       .catch(error => {
@@ -35,8 +37,8 @@ export default class ToDoList extends Component {
       <ul>
         {this.state.toDoTasks.map(toDo => (
           <ToDoItem
-            key={toDo.id}
-            id={toDo.id}
+            key={toDo.notes_id}
+            id={toDo.notes_id}
             updateToDoTasks={this.updateToDoTasks}
             deleteToDoTasks={this.deleteToDoTasks}
             description={toDo.description}
@@ -49,3 +51,13 @@ export default class ToDoList extends Component {
     );
   }
 }
+
+export default connect(
+  (state, ownProps) => {
+    console.log(state);
+    return {
+      username: state.authreducer.username
+    };
+  },
+  {}
+)(ToDoList);

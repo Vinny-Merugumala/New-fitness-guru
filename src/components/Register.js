@@ -40,7 +40,6 @@ class Register extends React.Component {
       axios
         .post("/auth/register", body)
         .then(response => {
-          console.log(response);
           this.props.updateName(response.data.name);
           this.props.updateUsername(response.data.username);
           this.setState({ redirect: true });
@@ -57,8 +56,6 @@ class Register extends React.Component {
   };
 
   render() {
-    console.log(this.state);
-
     if (this.state.redirect === true) {
       return <Redirect to="/" />;
     }

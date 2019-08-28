@@ -537,9 +537,11 @@
     
       }
 .account-page {
+  height: 100%; 
+  width: 100%;  
   border:solid white;
-  height: 100%;
-  width: 100%;
+   background-size: cover;
+ background-repeat: no-repeat; 
   background-image: url('https://rew-online.com/wp-content/uploads/2018/01/WIKIGYM.png')
 }
   .main-container {

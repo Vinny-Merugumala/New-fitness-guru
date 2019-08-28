@@ -5,25 +5,24 @@ import "../styles/index.css";
 import axios from "axios";
 
 class NavBar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  logOutUser = () => {};
-
-  componentDidMount() {
-    axios.get("/auth/logout");
+  logout() {
+    axios
+      .get("/auth/logout")
+      .then(() => {
+        this.props.updateUser({});
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
     return (
       <body class="antialiased bg-gray-200">
-        <header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
-          <div class="flex-1 flex justify-between items-center" />
+        <header className="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+          <div className="flex-1 flex justify-between items-center" />
 
           <label for="menu-toggle" class="pointer-cursor lg:hidden block">
             <svg
-              class="fill-current text-gray-900"
+              className="fill-current text-gray-900"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -50,12 +49,13 @@ class NavBar extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/logout"
+                  <button
+                    type="submit"
                     class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                    onClick={this.logout}
                   >
                     Logout
-                  </Link>
+                  </button>
                 </li>
                 <li>
                   <Link
