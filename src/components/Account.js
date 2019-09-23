@@ -25,7 +25,7 @@ class Account extends Component {
         <div className="main-container">
           <nav className="navbar-todo">
             <button
-              id="todo"
+              className="bg-blue-500 hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
               onClick={() => {
                 this.setState({ view: "toDoTasks" });
               }}
@@ -33,7 +33,7 @@ class Account extends Component {
               Notes
             </button>
             <button
-              id="addnew"
+              className="bg-blue-500 hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
               onClick={() => {
                 this.setState({ view: "newTasks" });
               }}

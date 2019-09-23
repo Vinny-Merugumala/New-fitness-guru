@@ -30,7 +30,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
   console.log("Database Connected");
 });
 
-// endpoints
+// endpointst
 app.post("/auth/register", register);
 app.post("/auth/login", login);
 app.get("/auth/logout", logout);

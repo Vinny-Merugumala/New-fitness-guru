@@ -1,8 +1,8 @@
 const getToDoTasks = (req, res) => {
   const db = req.app.get("db");
-  console.log("hello", req);
+  // console.log("hello", req);
   db.get_usernotes([req._parsedOriginalUrl.query]).then(toDo => {
-    console.log(toDo);
+    // console.log(toDo);
     res.status(200).json(toDo);
   });
 };
@@ -17,18 +17,18 @@ const addToDoTask = (req, res) => {
 
 const updateToDoTask = (req, res) => {
   const { id } = req.params;
-  console.log(id);
+  // console.log(id);
   const { date, time, description } = req.body;
   const db = req.app.get("db");
   db.update_note([date, time, description, id])
     .then(() => {
-      console.log("hit");
-      console.log(req.body);
+      // console.log("hit");
+      // console.log(req.body);
 
       res.sendStatus(200);
     })
     .catch(e => {
-      console.log(e);
+      // console.log(e);
     });
 };
 

@@ -10,6 +10,7 @@ class NavBar extends Component {
       .get("/auth/logout")
       .then(() => {
         this.props.updateUser({});
+        window.location.reload();
       })
       .catch(err => console.log(err));
   }
@@ -54,7 +55,7 @@ class NavBar extends Component {
                     class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
                     onClick={this.logout}
                   >
-                    Logout
+                    <Link to="/">Logout</Link>
                   </button>
                 </li>
                 <li>
